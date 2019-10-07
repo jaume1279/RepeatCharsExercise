@@ -22,7 +22,14 @@ namespace RepeatCharsPhase1
             {
                 Console.Write("\nIntroduce el caracter {0}: " , (i+1));
                 tecla = Console.ReadKey();
-                name[i] = tecla.KeyChar;
+                if (!(char.IsDigit(tecla.KeyChar)))
+                    name[i] = tecla.KeyChar;
+                else
+                {
+                    Console.WriteLine("\nLos nombres solo tienen letras!!!! Vuelve a introducir:");
+                    i--;
+                }
+                    
             }
 
             Console.WriteLine();
